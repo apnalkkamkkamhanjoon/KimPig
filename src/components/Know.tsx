@@ -1,15 +1,23 @@
-import React from 'react';
+import React from "react";
 
-type KnowProps = {
-    data : any[]
+type arrayTypes = {
+    nes_cn: string
 }
 
-const Know = ({data}:KnowProps) => {
-    return (
-        <div>
-            {data?.map((item, index)=><div key={index}>{item.nes_cn}</div>)}
-        </div>
-    );
+type KnowProps = {
+  data : arrayTypes[]
+};
+
+const Know = ({ data }: KnowProps) => {
+  return (
+    <div>
+      {data?.map((item, index) => (
+        <h2 className="knowPig" key={index}>
+          {item.nes_cn}
+        </h2>
+      ))}
+    </div>
+  );
 };
 
 export default Know;
