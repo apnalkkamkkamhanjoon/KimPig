@@ -1,6 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+}
+
+.knowPig{
+  font-family: 'Jua', sans-serif;
+  font-weight: 600;
+}
+
+.letsGo{
+  font-family: 'Jua', sans-serif;
+  font-weight: 600;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #fff;
+}
+.letsGo:hover{
+  color: #f36ef3;
 }
