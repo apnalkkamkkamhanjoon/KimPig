@@ -1,9 +1,13 @@
 import React from 'react';
 
-const Know = () => {
+type KnowProps = {
+    data : any[]
+}
+
+const Know = ({data}:KnowProps) => {
     return (
         <div>
-            know 씨발아
+            {data?.map((item, index)=><div key={index}>{item.nes_cn}</div>)}
         </div>
     );
 };

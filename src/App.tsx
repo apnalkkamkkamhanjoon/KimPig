@@ -18,6 +18,7 @@ const APIKEY =
 const URL = `https://apis.data.go.kr/1250000/othbcact/getOthbcact?serviceKey=${APIKEY}&pageNo=1&numOfRows=100&bgng_ymd=20171010&end_ymd=${
   year + month + date
 }`;
+
 function App() {
   const [data, setData] = useState([]);
 
@@ -27,6 +28,8 @@ function App() {
     });
   }, []);
 
+  console.log(data);
+
   return (
     <Router>
       <Routes>
@@ -34,12 +37,14 @@ function App() {
           path="/"
           element={
             <div>
-            <h1 className="knowPig">김정은 그의 행방을 추적해보자...</h1>
-            <Link to='/know' className="letsGo">알아보기</Link>
+              <h1 className="knowPig">김정은 그의 행방을 추적해보자...</h1>
+              <Link to="/know" className="letsGo">
+                알아보기
+              </Link>
             </div>
           }
         />
-        <Route path="/know" element={<Know />} />
+        <Route path="/know" element={<Know data={data} />} />
       </Routes>
     </Router>
   );
