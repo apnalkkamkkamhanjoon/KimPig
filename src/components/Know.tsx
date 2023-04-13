@@ -1,11 +1,11 @@
 import React from "react";
 
 type arrayTypes = {
-    nes_cn: string
-}
+  nes_cn: string;
+};
 
 type KnowProps = {
-  data : arrayTypes[]
+  data: arrayTypes[];
 };
 
 const Know = ({ data }: KnowProps) => {
