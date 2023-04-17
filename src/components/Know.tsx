@@ -13,8 +13,8 @@ const Know = ({ data }: KnowProps) => {
   return (
     <div>
       {data?.map((item, index) => (
-        <div>
-          <h2 className="knowPig" key={index}>
+        <div key={index}>
+          <h2 className="knowPig" >
             {item.nes_cn}<p>({item.nes_ymd})</p>
           </h2>
         </div>
