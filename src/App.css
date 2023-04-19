@@ -13,15 +13,31 @@
   font-size: 1.4rem;
   cursor: pointer;
   color: #fff;
+  text-decoration: underline;
+  transition: all 0.1s ease-out;
 }
 .letsGo:hover{
-  color: #6eddf3;
+  color: #ff5c17;
 }
 
 .pigBox{
   border: 2px solid #6eddf3;
   margin-top: 10px;
   border-radius: 20px;
+}
+
+.goToHome{
+  position: absolute;
+  left: 2%;
+  font-size: 3rem;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.1s ease-out;
+}
+
+.goToHome:hover{
+  color: #ff5c17;
+  transform: scale(1.4);
 }
 
 .knowPig{
@@ -36,4 +52,20 @@
 .excman{
   font-family: 'Jua', sans-serif;
   font-size: 1.2rem;
+}
+
+.goToTop{
+  font-family: 'Jua', sans-serif;
+  position: fixed;
+  cursor: pointer;
+  color: #fff;
+  font-size: 2.6rem;
+  left: 95%;
+  top: 84%;
+  transition: all 0.1s ease-out;
+  font-weight: 700;
+}
+.goToTop:hover{
+  color: #ff5c17;
+  transform: scale(1.2);
 }

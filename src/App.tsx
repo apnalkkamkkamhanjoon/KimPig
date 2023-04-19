@@ -24,6 +24,7 @@ const URL = `https://apis.data.go.kr/1250000/othbcact/getOthbcact?serviceKey=${
 function App() {
   const [data, setData] = useState([]);
   const [state, setState] = useState(Boolean);
+  const [showScrollButton, setShowScrollButton] = useState(false);
 
   useEffect(() => {
     axios
@@ -38,6 +39,8 @@ function App() {
   }, []);
 
   console.log(data);
+
+  
 
   return (
     <Router>

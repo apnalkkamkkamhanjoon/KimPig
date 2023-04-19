@@ -1,5 +1,6 @@
-import React from "react";
 import { Link } from "react-router-dom";
+import { GiMissileSwarm } from "react-icons/gi";
+import { BsArrowUpCircle } from "react-icons/bs";
 
 type arrayTypes = {
   nes_cn: string;
@@ -13,9 +14,15 @@ type KnowProps = {
 };
 
 const Know = ({ data }: KnowProps, { load }: KnowProps) => {
+  
   return (
     <>
-      <Link to={`/`}>홈</Link>
+      <Link to={`/`} className="goToHome">
+        <GiMissileSwarm />
+      </Link>
+      <p className="goToTop">
+        <BsArrowUpCircle />
+      </p>
       {load ? (
         <div>김정은 추적 중...</div>
       ) : (
