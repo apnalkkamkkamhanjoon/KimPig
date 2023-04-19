@@ -7,11 +7,6 @@
   text-align: center;
 }
 
-.knowPig{
-  font-family: 'Jua', sans-serif;
-  font-weight: 600;
-}
-
 .letsGo{
   font-family: 'Jua', sans-serif;
   font-weight: 600;
@@ -20,5 +15,25 @@
   color: #fff;
 }
 .letsGo:hover{
-  color: #f36ef3;
+  color: #6eddf3;
+}
+
+.pigBox{
+  border: 2px solid #6eddf3;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+.knowPig{
+  font-family: 'Jua', sans-serif;
+  font-weight: 600;
+}
+
+.knowPig p{
+  font-size: 1.2rem;
+}
+
+.excman{
+  font-family: 'Jua', sans-serif;
+  font-size: 1.2rem;
 }

@@ -15,18 +15,22 @@ const { VITE_API_KEY } = import.meta.env;
 const config = {
   apikey: VITE_API_KEY,
 };
+
 const URL = `https://apis.data.go.kr/1250000/othbcact/getOthbcact?serviceKey=${
   config.apikey
 }&pageNo=1&numOfRows=100&bgng_ymd=20171010&end_ymd=${year + month + date}`;
 
+
 function App() {
   const [data, setData] = useState([]);
+  const [state, setState] = useState(Boolean);
 
   useEffect(() => {
     axios
       .get(URL)
       .then((res) => {
         setData(res.data.items);
+        setState(true);
       })
       .catch((err) => {
         console.log(err);
@@ -49,7 +53,7 @@ function App() {
             </div>
           }
         />
-        <Route path="/know" element={<Know data={data} />} />
+        <Route path="/know" element={<Know data={data} load={state} />} />
       </Routes>
     </Router>
   );
