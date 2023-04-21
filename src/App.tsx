@@ -10,6 +10,9 @@ let nowYear = today.getFullYear(); // 년도
 let nowMonth = today.getMonth() + 1; // 월
 let nowDate = today.getDate(); // 날짜
 
+let endYmd = nowYear + nowMonth + nowDate;
+let bgngYmd = '20170101'
+
 const { VITE_API_KEY } = import.meta.env;
 
 const config = {
@@ -18,7 +21,7 @@ const config = {
 
 const URL = `https://apis.data.go.kr/1250000/othbcact/getOthbcact?serviceKey=${
   config.apikey
-}&pageNo=1&numOfRows=100&bgng_ymd=20171010&end_ymd=${nowYear + nowMonth + nowDate}`;
+}&pageNo=1&numOfRows=100&bgng_ymd=${bgngYmd}&end_ymd=${endYmd}`;
 
 
 function App() {
