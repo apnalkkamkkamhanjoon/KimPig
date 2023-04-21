@@ -11,10 +11,9 @@ type arrayTypes = {
 
 type KnowProps = {
   data: arrayTypes[];
-  load: boolean;
 };
 
-const Know = ({ data }: KnowProps, { load }: KnowProps) => {
+const Know = ({ data }: KnowProps) => {
 
   const goToTop = () => {
     // top:0 >> 맨위로  behavior:smooth >> 부드럽게 이동할수 있게 설정하는 속성

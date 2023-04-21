@@ -32,7 +32,6 @@ function App() {
       .get(URL)
       .then((res) => {
         setData(res.data.items);
-        setState(true);
       })
       .catch((err) => {
         console.log(err);
@@ -77,7 +76,7 @@ function App() {
             </div>
           }
         />
-        <Route path="/know" element={<Know data={data} load={state} />} />
+        <Route path="/know" element={<Know data={data}/>} />
       </Routes>
     </Router>
   );
