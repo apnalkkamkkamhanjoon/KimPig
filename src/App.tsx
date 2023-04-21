@@ -21,11 +21,11 @@ const config = {
 
 function App() {
   const [data, setData] = useState([]);
-  const [state, setState] = useState(Boolean);
+  const [state, setState] = useState<boolean>(Boolean);
 
-  const [select, setSelect] = useState(10);
+  const [select, setSelect] = useState<string>('');
 
-  const URL = `https://apis.data.go.kr/1250000/othbcact/getOthbcact?serviceKey=${config.apikey}&pageNo=1&numOfRows=100&bgng_ymd=${bgngYmd}&end_ymd=${endYmd}`;
+  const URL = `https://apis.data.go.kr/1250000/othbcact/getOthbcact?serviceKey=${config.apikey}&pageNo=1&numOfRows=${select}&bgng_ymd=${bgngYmd}&end_ymd=${endYmd}`;
 
   useEffect(() => {
     axios
