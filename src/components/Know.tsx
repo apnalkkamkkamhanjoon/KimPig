@@ -29,9 +29,6 @@ const Know = ({ data }: KnowProps, { load }: KnowProps) => {
       <p className="goToTop" onClick={goToTop}>
         <BsArrowUpCircle />
       </p>
-      {load ? (
-        <div>김정은 추적 중...</div>
-      ) : (
         <div>
           {data?.map((item, index) => (
             <div key={index} className="pigBox">
@@ -43,7 +40,6 @@ const Know = ({ data }: KnowProps, { load }: KnowProps) => {
             </div>
           ))}
         </div>
-      )}
     </>
   );
 };

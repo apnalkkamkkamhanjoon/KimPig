@@ -23,7 +23,7 @@ function App() {
   const [data, setData] = useState([]);
   const [state, setState] = useState<boolean>(Boolean);
 
-  const [select, setSelect] = useState<string>('');
+  const [select, setSelect] = useState<string>("10");
 
   const URL = `https://apis.data.go.kr/1250000/othbcact/getOthbcact?serviceKey=${config.apikey}&pageNo=1&numOfRows=${select}&bgng_ymd=${bgngYmd}&end_ymd=${endYmd}`;
 
@@ -39,6 +39,10 @@ function App() {
       });
   }, []);
 
+  console.log(select);
+  console.log(URL);
+  console.log(data);
+
   return (
     <Router>
       <Routes>
@@ -47,11 +51,14 @@ function App() {
           element={
             <div>
               <h1 className="knowPig">김정은 그의 행방을 추적해보자...</h1>
-              <div>가져올 데이터 고르기</div>
+              <div className="select">가져올 데이터 수 고르기</div>
               <select
+              className="selectBar"
                 typeof="number"
                 value={select}
-                onChange={({ target: { value } }) => setSelect(Number(value))}
+                onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
+                  setSelect(e.target.value)
+                }
               >
                 <option value="10">10</option>
                 <option value="20">20</option>

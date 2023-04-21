@@ -7,7 +7,34 @@
   text-align: center;
 }
 
+.select{
+  display: inline-block;
+  font-family: 'Jua', sans-serif;
+  font-weight: 600;
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.selectBar{
+  font-family: 'Jua', sans-serif;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-left: 20px;
+  width: 5vw;
+  height: 4vh;
+  border: none;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #000;
+}
+
 .letsGo{
+  display: flex;
+  justify-content: center;
+  text-align: center;
   font-family: 'Jua', sans-serif;
   font-weight: 600;
   font-size: 1.4rem;
