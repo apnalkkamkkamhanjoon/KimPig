@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { GiMissileSwarm } from "react-icons/gi";
 import { BsArrowUpCircle } from "react-icons/bs";
+import { useEffect, useState } from "react";
 
 type arrayTypes = {
   nes_cn: string;
@@ -14,13 +15,18 @@ type KnowProps = {
 };
 
 const Know = ({ data }: KnowProps, { load }: KnowProps) => {
-  
+
+  const goToTop = () => {
+    // top:0 >> 맨위로  behavior:smooth >> 부드럽게 이동할수 있게 설정하는 속성
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <>
       <Link to={`/`} className="goToHome">
         <GiMissileSwarm />
       </Link>
-      <p className="goToTop">
+      <p className="goToTop" onClick={goToTop}>
         <BsArrowUpCircle />
       </p>
       {load ? (
