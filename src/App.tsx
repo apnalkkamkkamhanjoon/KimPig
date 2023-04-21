@@ -21,7 +21,6 @@ const config = {
 
 function App() {
   const [data, setData] = useState([]);
-  const [state, setState] = useState<boolean>(Boolean);
 
   const [select, setSelect] = useState<string>("10");
 
@@ -36,11 +35,11 @@ function App() {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [select]);
 
-  console.log(select);
-  console.log(URL);
-  console.log(data);
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelect(e.target.value);
+  };
 
   return (
     <Router>
@@ -52,12 +51,10 @@ function App() {
               <h1 className="knowPig">김정은 그의 행방을 추적해보자...</h1>
               <div className="select">가져올 데이터 수 고르기</div>
               <select
-              className="selectBar"
+                className="selectBar"
                 typeof="number"
                 value={select}
-                onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
-                  setSelect(e.target.value)
-                }
+                onChange={handleChange}
               >
                 <option value="10">10</option>
                 <option value="20">20</option>
@@ -76,7 +73,7 @@ function App() {
             </div>
           }
         />
-        <Route path="/know" element={<Know data={data}/>} />
+        <Route path="/know" element={<Know data={data} />} />
       </Routes>
     </Router>
   );
