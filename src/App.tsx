@@ -6,9 +6,9 @@ import Know from "./components/Know";
 import { Link } from "react-router-dom";
 
 let today = new Date();
-let year = today.getFullYear(); // 년도
-let month = today.getMonth() + 1; // 월
-let date = today.getDate(); // 날짜
+let nowYear = today.getFullYear(); // 년도
+let nowMonth = today.getMonth() + 1; // 월
+let nowDate = today.getDate(); // 날짜
 
 const { VITE_API_KEY } = import.meta.env;
 
@@ -18,13 +18,12 @@ const config = {
 
 const URL = `https://apis.data.go.kr/1250000/othbcact/getOthbcact?serviceKey=${
   config.apikey
-}&pageNo=1&numOfRows=100&bgng_ymd=20171010&end_ymd=${year + month + date}`;
+}&pageNo=1&numOfRows=100&bgng_ymd=20171010&end_ymd=${nowYear + nowMonth + nowDate}`;
 
 
 function App() {
   const [data, setData] = useState([]);
   const [state, setState] = useState(Boolean);
-  const [showScrollButton, setShowScrollButton] = useState(false);
 
   useEffect(() => {
     axios
