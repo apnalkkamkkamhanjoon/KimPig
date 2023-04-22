@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Know from "./Know";
 
 let today = new Date();
 let nowYear = today.getFullYear(); // 년도
@@ -80,7 +81,7 @@ const Main = () => {
           <option value="4">4</option>
         </select>
       </div>
-      <Link to="/know" className="letsGo">
+      <Link to={'/know'} className="letsGo">
         {"<"}알아보기 {"/>"}
       </Link>
     </div>
