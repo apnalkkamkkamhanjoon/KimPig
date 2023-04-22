@@ -56,10 +56,10 @@ function App() {
           element={
             <div>
               <h1 className="knowPig">김정은 그의 행방을 추적해보자...</h1>
-              <div>
-                <div className="select">가져올 데이터 수 고르기</div>
+              <div className="selectBox">
+                <div className="numSelect">가져올 데이터 수 고르기</div>
                 <select
-                  className="selectBar"
+                  className="numSelectBar"
                   typeof="number"
                   value={numSelect}
                   onChange={numChange}
@@ -75,9 +75,9 @@ function App() {
                   <option value="90">90</option>
                   <option value="100">100</option>
                 </select>
-                <div className="select">페이지 고르기</div>
+                <div className="pageSelect">페이지 고르기</div>
                 <select
-                  className="selectBar"
+                  className="pageSelectBar"
                   typeof="number"
                   value={pageSelect}
                   onChange={pageChange}
