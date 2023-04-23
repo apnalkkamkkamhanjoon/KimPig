@@ -46,6 +46,7 @@ const Main = () => {
   const pageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setPageSelect(e.target.value);
   };
+
   return (
     <div>
       <h1 className="knowPig">김정은 그의 행방을 추적해보자...</h1>
@@ -81,7 +82,7 @@ const Main = () => {
           <option value="4">4</option>
         </select>
       </div>
-      <Link to={'/know'} className="letsGo">
+      <Link to='/know' state={data} className="letsGo">
         {"<"}알아보기 {"/>"}
       </Link>
     </div>
