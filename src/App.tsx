@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
 import "./App.css";
-import axios from "axios";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import Know from "./components/Know";
-import { Link } from "react-router-dom";
+import Main from "./components/Main";
 
 let today = new Date();
 let nowYear = today.getFullYear(); // 년도
@@ -18,7 +18,6 @@ const { VITE_API_KEY } = import.meta.env;
 const config = {
   apikey: VITE_API_KEY,
 };
-
 function App() {
   const [data, setData] = useState([]);
 
@@ -51,49 +50,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <div>
-              <h1 className="knowPig">김정은 그의 행방을 추적해보자...</h1>
-              <div>
-                <div className="select">가져올 데이터 수 고르기</div>
-                <select
-                  className="selectBar"
-                  typeof="number"
-                  value={numSelect}
-                  onChange={numChange}
-                >
-                  <option value="10">10</option>
-                  <option value="20">20</option>
-                  <option value="30">30</option>
-                  <option value="40">40</option>
-                  <option value="50">50</option>
-                  <option value="60">60</option>
-                  <option value="70">70</option>
-                  <option value="80">80</option>
-                  <option value="90">90</option>
-                  <option value="100">100</option>
-                </select>
-                <div className="select">페이지 고르기</div>
-                <select
-                  className="selectBar"
-                  typeof="number"
-                  value={pageSelect}
-                  onChange={pageChange}
-                >
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                </select>
-              </div>
-              <Link to="/know" className="letsGo">
-                {"<"}알아보기 {"/>"}
-              </Link>
-            </div>
-          }
-        />
+        <Route path="/" element={<Main numChange={numChange} numSelect={numSelect} pageChange={pageChange} pageSelect={pageSelect}/>} />
         <Route path="/know" element={<Know data={data} />} />
       </Routes>
     </Router>
