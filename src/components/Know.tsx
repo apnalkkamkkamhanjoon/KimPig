@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { GiMissileSwarm } from "react-icons/gi";
 import { BsArrowUpCircle } from "react-icons/bs";
-import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 type arrayTypes = {
   nes_cn: string;
@@ -14,7 +14,6 @@ type KnowProps = {
 };
 
 const Know = ({ data }: KnowProps) => {
-
   const goToTop = () => {
     // top:0 >> 맨위로  behavior:smooth >> 부드럽게 이동할수 있게 설정하는 속성
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -22,12 +21,17 @@ const Know = ({ data }: KnowProps) => {
 
   return (
     <>
-      <Link to={`/`} className="goToHome">
-        <GiMissileSwarm />
-      </Link>
-      <p className="goToTop" onClick={goToTop}>
-        <BsArrowUpCircle />
-      </p>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 10 }}
+        exit={{ opacity: 10 }}
+      >
+        <Link to={`/`} className="goToHome">
+          <GiMissileSwarm />
+        </Link>
+        <p className="goToTop" onClick={goToTop}>
+          <BsArrowUpCircle />
+        </p>
         <div>
           {data?.map((item, index) => (
             <div key={index} className="pigBox">
@@ -39,6 +43,7 @@ const Know = ({ data }: KnowProps) => {
             </div>
           ))}
         </div>
+      </motion.div>
     </>
   );
 };
