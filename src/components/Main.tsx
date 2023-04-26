@@ -13,7 +13,7 @@ const Main = (props: MainProps) => {
   
   return (
     <div>
-      <h1 className="knowPig">김정은 그의 행방을 추적해보자...</h1>
+      <h1 className="knowPig">김정은 그를 염탐해보자...</h1>
       <div className="selectBox">
         <div className="numSelect">가져올 데이터 수 고르기</div>
         <select
