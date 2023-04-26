@@ -1,18 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 type MainProps = {
   numSelect: string;
   pageSelect: string;
-  numChange : (e: React.ChangeEvent<HTMLSelectElement>) => void;
-  pageChange : (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  numChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  pageChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 };
 
 const Main = (props: MainProps) => {
-
-  
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 10 }}
+      exit={{ opacity: 10 }}
+    >
       <h1 className="knowPig">김정은 그를 염탐해보자...</h1>
       <div className="selectBox">
         <div className="numSelect">가져올 데이터 수 고르기</div>
@@ -49,7 +52,7 @@ const Main = (props: MainProps) => {
       <Link to="/know" className="letsGo">
         {"<"}알아보기 {"/>"}
       </Link>
-    </div>
+    </motion.div>
   );
 };
 

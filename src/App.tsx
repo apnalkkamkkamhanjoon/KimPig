@@ -4,6 +4,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Know from "./components/Know";
 import Main from "./components/Main";
+import { AnimatePresence } from "framer-motion";
 
 let today = new Date();
 let nowYear = today.getFullYear(); // 년도
@@ -49,10 +50,22 @@ function App() {
 
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Main numChange={numChange} numSelect={numSelect} pageChange={pageChange} pageSelect={pageSelect}/>} />
-        <Route path="/know" element={<Know data={data} />} />
-      </Routes>
+      <AnimatePresence>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Main
+                numChange={numChange}
+                numSelect={numSelect}
+                pageChange={pageChange}
+                pageSelect={pageSelect}
+              />
+            }
+          />
+          <Route path="/know" element={<Know data={data} />} />
+        </Routes>
+      </AnimatePresence>
     </Router>
   );
 }
